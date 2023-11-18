@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="{% static 'asset/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <p><a href="/home">Home Page</a></p>
+            </div>
+            <div class="col-md-4 shadow mt-5 p-4 mx-auto">
+                <h2 align="center">Login</h2>
+                {%if errmsg %}
+                    <div class="alert alert-danger">
+                        {{errmsg}}
+                    </div>
+                {% endif %}
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label"><strong>Username:</strong></label>
+                        <input type="email" name="uname" class="form-control" id="Input1" placeholder="enter username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input3" class="form-label"><strong>Password:</strong></label>
+                        <input type="password" name="upass" class="form-control" id="Input3" placeholder="enter password again">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-danger" value="Login"  />
+                        Not User? <a href="/register" style="text-decoration:none;">Register</a>
+                    </div>
+                </form>           
+             </div>
+        </div>
+    </div>
+    <script src="{% static 'file:///C:/my_jango13/bootstrap79/asset/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
